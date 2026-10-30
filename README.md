@@ -56,8 +56,6 @@ Known failure: a model that holds the character overall can still fail on a **lo
 
 ## Install
 
-Compatible with any agent supporting the [Agent Skills](https://agentskills.io) open standard.
-
 ```
 npx skills add CatsMansion/anime-asset-pipeline
 ```
@@ -67,6 +65,14 @@ Or clone into your skills directory:
 ```
 git clone https://github.com/CatsMansion/anime-asset-pipeline.git
 ```
+
+Works with any agent that reads `SKILL.md` — Claude Code, Codex, Cursor, Gemini CLI, Copilot, Windsurf, and the rest.
+
+### Frontmatter is spec-clean
+
+All four fields used here sit within the six the standard allows (`name`, `description`, `license`, `metadata`), and `version` is nested under `metadata` rather than sitting at the top level.
+
+That detail matters. A **top-level `version` key** is the most common reason a skill fails to upload to claude.ai or the Skills API, with a hard `Unexpected key(s) in SKILL.md frontmatter` error — not a warning, an error. As of October 2026 an audit of 158 catalogued skills with frontmatter found 12 using fields outside the spec. This one is not among them.
 
 ## Structure
 

@@ -83,7 +83,8 @@ anime-asset-pipeline/
 │   ├── identity-lock.md              # anchors, feature-by-feature verification
 │   ├── 8bit-budget.md                # quantisation arithmetic + decision rule
 │   ├── defect-checklist.md           # per-region checks, animation metrics
-│   └── channel-preflight.md          # availability probing, balance checks
+│   ├── channel-preflight.md          # availability probing, balance checks
+│   └── iso-building-levels.md        # building Lv.1→Lv.3 chains, detail tiering
 └── assets/
     └── review-report-template.md     # failures-first report format
 ```

@@ -4,7 +4,7 @@ description: Pipeline for producing anime/2D character art with an AI image mode
 license: MIT
 metadata:
   author: CatsMansion
-  version: "0.1.0"
+  version: "0.2.0"
   origin: distilled from a 1372-sprite desktop-pet project and an anime MV production
 ---
 
@@ -124,6 +124,18 @@ Template: [assets/review-report-template.md](assets/review-report-template.md).
 - If the human has banned a channel, it stays banned. Do not reach for it as a fallback.
 
 See [references/channel-preflight.md](references/channel-preflight.md).
+
+## Building level chains
+
+Isometric building upgrades (Lv.1 → Lv.3) are the same discipline with different failure modes. The model will shrink the scene to fit a new roof, "open" a face by opening a hole in it, give you a roof made of open beams instead of a sheet, and render every face at the same density until the client says the detail is "too even".
+
+Three things to carry over:
+
+- **The colour reference is the client's original, never your own edit.** If you regenerated Lv.1 yourself, matching to it is self-reference.
+- **Detail must be tiered per surface**, not per feature — and it is measurable (3×3 Laplacian spread; aim ≥ 2.0, mean at or below reference).
+- **Alignment means same furniture scale**, not same canvas. Measure one unchanged fixture after every generation.
+
+See [references/iso-building-levels.md](references/iso-building-levels.md).
 
 ## Common misdiagnoses
 
